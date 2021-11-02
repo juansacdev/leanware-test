@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: leanware
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    depends_on:
+      - db
+    environment:
+      TYPE_ORM_HOST: db
+      TYPE_ORM_PORT: 5432
+      TYPE_ORM_USERNAME: root
+      TYPE_ORM_PASSWORD: root
+      TYPE_ORM_DB: leanware
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+
+volumes:
+  db_data: {}

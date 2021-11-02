@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "lib": [
+      "ES2021"
+    ],
+    "module": "CommonJS",
+    "rootDir": "./",
+    "moduleResolution": "Node",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "removeComments": true,
+    "newLine": "crlf",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "typeRoots": [
+      "src/typings",
+      "./node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "./node_modules/**/*",
+    "./dist/**/**/*",
+    "**/*.test.ts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "ormconfig.ts",
+    "ormconfig.start.ts"
+  ]
+}
