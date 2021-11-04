@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      TYPE_ORM_HOST:
+      TYPE_ORM_PORT: 5432
+      TYPE_ORM_USERNAME:
+      TYPE_ORM_PASSWORD:
+      TYPE_ORM_DB:
+    ports:
+      - 3000:3000

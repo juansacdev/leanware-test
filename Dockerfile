@@ -9,6 +9,8 @@ RUN npm install --silent
 
 COPY . .
 
+RUN npm run migrations:run
+
 RUN npm run build
 
 # Stage 2
