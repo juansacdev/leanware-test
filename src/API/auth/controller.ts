@@ -42,7 +42,7 @@ export class AuthController {
 		next: NextFunction,
 	): Promise<Response | undefined> {
 		try {
-			const userData = req.body as LoginUser
+			const userData: LoginUser = req.body
 			const token = await AuthServices.signIn(userData)
 
 			return res.status(200).json({ token })

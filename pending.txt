@@ -1,0 +1,10 @@
+Feedback:
+  - Capa de validacion de datos (Joi)
+  - Migraciones formato seed https://sushilkbansal.medium.com/how-to-seed-typeorm-d9637a5948cc
+  - Correr migraciones en el build de la image con docker
+  - Implementar Redis para el cache
+  - Crear una migracion que cree un user admin con una password que se le pasa como env variable
+  - Usar PATCH para actualizaciones parciales y PUT para hacer un replace completo
+  - Expiracion de los tokes no mayor a 15 min in prod
+  - "User not found" cambiarlo por bad request o bad data con boom.
+  - Manejar brach por features

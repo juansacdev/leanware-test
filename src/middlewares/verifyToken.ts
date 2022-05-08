@@ -10,11 +10,11 @@ async function verifyToken(
 	next: NextFunction,
 ): Promise<void> {
 	const bearerToken = req.headers.authorization
-	if (!bearerToken) return next(boom.unauthorized('Token required'))
+	if (!bearerToken) return next(boom.proxyAuthRequired('Token required'))
 
 	const [bearer, token] = bearerToken.split(' ')
 	if (bearer !== 'Bearer' || !token)
-		return next(boom.unauthorized('Invalid token format'))
+		return next(boom.proxyAuthRequired('Invalid token format'))
 
 	try {
 		const decoded = jwt.verify(token, config.jwtSecret) as Payload

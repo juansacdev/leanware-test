@@ -53,11 +53,10 @@ export class User extends BaseEntity {
 
 	@BeforeInsert()
 	async hash() {
-		const hash = await hashPassword(this.password)
-		this.password = hash
+		this.password = await hashPassword(this.password)
 	}
 
-	async comparePasswords(rawPass: string, hashPass: string): Promise<boolean> {
-		return await isValidPassword(rawPass, hashPass)
+	comparePasswords(rawPass: string, hashPass: string) {
+		return isValidPassword(rawPass, hashPass)
 	}
 }
